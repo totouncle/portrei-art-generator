@@ -8,8 +8,8 @@ const Header = () => {
 
   const handleLogin = () => {
     toast({
-      title: "로그인 준비 중",
-      description: "현재 Supabase 연동이 필요합니다. 곧 구현될 예정입니다.",
+      title: "Login Coming Soon",
+      description: "Supabase integration is needed. Will be implemented soon.",
     });
   };
 
@@ -27,15 +27,15 @@ const Header = () => {
       <div className="flex items-center gap-4">
         <div className="hidden md:flex items-center gap-2 text-sm bg-muted px-3 py-1 rounded-full">
           <span className="inline-block w-2 h-2 bg-portrei-primary rounded-full"></span>
-          <span>토큰: 3개 남음</span>
+          <span>Tokens: 3 remaining</span>
         </div>
         
         <Button onClick={handleLogin} variant="outline" size="sm">
-          로그인
+          Log In
         </Button>
         
         <Button className="hidden sm:flex bg-portrei-primary hover:bg-portrei-secondary" size="sm">
-          토큰 구매
+          Buy Tokens
         </Button>
       </div>
     </header>

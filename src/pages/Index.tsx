@@ -74,10 +74,10 @@ const Index = () => {
   
   const getStyleName = () => {
     switch (selectedStyle) {
-      case 'rough': return '약식 스케치';
-      case 'detailed': return '상세 스케치';
-      case 'color': return '밝은 컬러링';
-      case 'artistic': return '예술적 스타일';
+      case 'rough': return 'Rough Sketch';
+      case 'detailed': return 'Detailed Sketch';
+      case 'color': return 'Light Coloring';
+      case 'artistic': return 'Artistic Style';
       default: return '';
     }
   };
@@ -95,10 +95,10 @@ const Index = () => {
           <div>
             <div className="mb-6">
               <h2 className="text-2xl font-bold mb-4 text-center">
-                스타일 선택
+                Select Style
               </h2>
               <p className="text-center text-muted-foreground mb-6">
-                생성하고 싶은 초상화 스타일을 선택하세요. 각 스타일 당 1토큰이 사용됩니다.
+                Choose a portrait style you'd like to generate. Each style uses 1 token.
               </p>
             </div>
             <StyleSelector onStyleSelect={handleStyleSelect} />
@@ -123,7 +123,7 @@ const Index = () => {
         );
         
       default:
-        return <div>오류가 발생했습니다.</div>;
+        return <div>An error occurred.</div>;
     }
   };
   
@@ -138,11 +138,11 @@ const Index = () => {
         <section className="py-12 portrei-gradient">
           <div className="container mx-auto px-4 text-white text-center">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              AI 초상화 생성 서비스
+              AI Portrait Generation Service
             </h1>
             <p className="text-xl max-w-2xl mx-auto opacity-90 mb-8">
-              인공지능 기술로 당신의 사진을 예술적인 초상화로 변환하세요.
-              4가지 독특한 스타일로 당신만의 작품을 만들어 보세요.
+              Transform your photos into artistic portraits using AI technology.
+              Create your unique artwork in 4 distinctive styles.
             </p>
           </div>
         </section>

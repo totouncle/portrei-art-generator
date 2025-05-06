@@ -21,29 +21,29 @@ interface StyleSelectorProps {
 const styles: StyleOption[] = [
   {
     id: 'rough',
-    name: '약식 스케치',
-    description: '간결하고 빠른 스케치 스타일',
+    name: 'Rough Sketch',
+    description: 'Quick and simple sketch style',
     color: 'bg-art-sketch',
     samples: ['https://images.unsplash.com/photo-1581091226825-a6a2a5aee158']
   },
   {
     id: 'detailed',
-    name: '상세 스케치',
-    description: '정교하고 세밀한 연필 스케치 스타일',
+    name: 'Detailed Sketch',
+    description: 'Elaborate and detailed pencil sketch style',
     color: 'bg-art-detailed',
     samples: ['https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d']
   },
   {
     id: 'color',
-    name: '밝은 컬러링',
-    description: '생동감 있는 컬러 스타일',
+    name: 'Light Coloring',
+    description: 'Vibrant color style',
     color: 'bg-art-color',
     samples: ['https://images.unsplash.com/photo-1649972904349-6e44c42644a7']
   },
   {
     id: 'artistic',
-    name: '예술적 스타일',
-    description: '독창적인 예술 기법의 표현적 스타일',
+    name: 'Artistic Style',
+    description: 'Expressive style with unique artistic techniques',
     color: 'bg-art-artistic',
     samples: ['https://images.unsplash.com/photo-1518770660439-4636190af475']
   }
@@ -55,15 +55,15 @@ const StyleSelector: React.FC<StyleSelectorProps> = ({ onStyleSelect, disabled =
   const handleStyleClick = (style: ArtStyle) => {
     if (disabled) {
       toast({
-        title: "처리 중입니다",
-        description: "현재 이미지를 처리 중입니다. 잠시 기다려주세요.",
+        title: "Processing in Progress",
+        description: "Currently processing your image. Please wait.",
       });
       return;
     }
     
     toast({
-      title: `${styles.find(s => s.id === style)?.name} 스타일 선택됨`,
-      description: "이미지를 분석하고 초상화를 생성합니다.",
+      title: `${styles.find(s => s.id === style)?.name} Style Selected`,
+      description: "Analyzing image and creating portrait.",
     });
     
     onStyleSelect(style);
@@ -98,7 +98,7 @@ const StyleSelector: React.FC<StyleSelectorProps> = ({ onStyleSelect, disabled =
             className="w-full hover:bg-portrei-primary hover:text-white transition-colors"
             disabled={disabled}
           >
-            이 스타일 선택
+            Select This Style
           </Button>
         </div>
       ))}

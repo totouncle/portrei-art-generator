@@ -20,19 +20,19 @@ const ProcessingStatus: React.FC<ProcessingStatusProps> = ({
       </div>
       
       <h3 className="text-xl font-medium mb-2">
-        {stage === 'analyzing' ? '이미지 분석 중...' : `${style} 초상화 생성 중...`}
+        {stage === 'analyzing' ? 'Analyzing Image...' : `Creating ${style} Portrait...`}
       </h3>
       
       <p className="text-muted-foreground mb-6">
         {stage === 'analyzing' 
-          ? '얼굴 특성을 분석하고 최적의 프롬프트를 생성하고 있습니다.' 
-          : '당신의 독특한 초상화를 생성하고 있습니다. 잠시만 기다려주세요.'}
+          ? 'Analyzing facial features and generating the optimal prompt.' 
+          : 'Creating your unique portrait. Please wait a moment.'}
       </p>
       
       <Progress value={progress} className="h-2 mb-2" />
       
       <p className="text-sm text-muted-foreground">
-        {progress}% 완료
+        {progress}% Complete
       </p>
     </div>
   );

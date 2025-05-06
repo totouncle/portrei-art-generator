@@ -44,7 +44,7 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageSelect }) => {
     // Check if file is an image
     if (!file.type.match('image.*')) {
       toast({
-        title: "이미지 파일만 업로드 가능합니다.",
+        title: "Only image files can be uploaded.",
         variant: "destructive",
       });
       return;
@@ -53,8 +53,8 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageSelect }) => {
     // Check file size (max 5MB)
     if (file.size > 5 * 1024 * 1024) {
       toast({
-        title: "파일 크기 제한",
-        description: "5MB 이하의 이미지만 업로드 가능합니다.",
+        title: "File Size Limit",
+        description: "Only images under 5MB can be uploaded.",
         variant: "destructive",
       });
       return;
@@ -84,16 +84,16 @@ const ImageUploader: React.FC<ImageUploaderProps> = ({ onImageSelect }) => {
         </div>
         
         <h3 className="text-xl font-medium mb-2">
-          이미지 업로드
+          Upload Image
         </h3>
         
         <p className="text-muted-foreground text-center max-w-md mb-4">
-          JPG, PNG 파일을 드래그하거나 클릭하여 업로드하세요.
-          최적의 결과를 위해 얼굴이 명확하게 보이는 사진을 선택하세요.
+          Drag and drop or click to upload JPG, PNG files.
+          For optimal results, choose a photo where the face is clearly visible.
         </p>
         
         <Button className="bg-portrei-primary hover:bg-portrei-secondary">
-          사진 선택
+          Select Photo
         </Button>
       </label>
     </div>

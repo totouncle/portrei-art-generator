@@ -22,29 +22,29 @@ const PortraitResultDisplay: React.FC<PortraitResultDisplayProps> = ({
   const handleDownload = () => {
     // In a real app, this would trigger an actual download
     toast({
-      title: "다운로드 시작",
-      description: "초상화 이미지가 다운로드됩니다.",
+      title: "Download Started",
+      description: "Your portrait image is downloading.",
     });
   };
   
   const handleShare = () => {
     // In a real app, this would open share options
     toast({
-      title: "공유 기능 준비 중",
-      description: "곧 구현될 예정입니다.",
+      title: "Sharing Feature Coming Soon",
+      description: "Will be implemented soon.",
     });
   };
   
   return (
     <div className="flex flex-col">
       <h2 className="text-2xl font-bold mb-6 text-center">
-        당신의 <span className="text-portrei-primary">{styleName}</span> 초상화
+        Your <span className="text-portrei-primary">{styleName}</span> Portrait
       </h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
         <div className="border rounded-xl overflow-hidden">
           <div className="bg-muted py-2 px-4 border-b">
-            <h3 className="font-medium">원본 이미지</h3>
+            <h3 className="font-medium">Original Image</h3>
           </div>
           <div className="p-4 flex justify-center">
             <img 
@@ -57,7 +57,7 @@ const PortraitResultDisplay: React.FC<PortraitResultDisplayProps> = ({
         
         <div className="border rounded-xl overflow-hidden">
           <div className="bg-gradient-to-r from-portrei-primary to-portrei-secondary py-2 px-4 border-b">
-            <h3 className="font-medium text-white">생성된 초상화</h3>
+            <h3 className="font-medium text-white">Generated Portrait</h3>
           </div>
           <div className="p-4 flex justify-center">
             <img 
@@ -75,7 +75,7 @@ const PortraitResultDisplay: React.FC<PortraitResultDisplayProps> = ({
           onClick={handleDownload}
         >
           <Download size={16} />
-          다운로드
+          Download
         </Button>
         
         <Button 
@@ -84,14 +84,14 @@ const PortraitResultDisplay: React.FC<PortraitResultDisplayProps> = ({
           onClick={handleShare}
         >
           <Share size={16} />
-          공유하기
+          Share
         </Button>
         
         <Button 
           variant="ghost" 
           onClick={onTryAnotherStyle}
         >
-          다른 스타일 시도하기
+          Try Another Style
         </Button>
       </div>
     </div>

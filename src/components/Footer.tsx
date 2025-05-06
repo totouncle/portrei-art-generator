@@ -17,16 +17,16 @@ const Footer = () => {
           
           <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-center">
             <a href="#" className="text-sm hover:text-portrei-primary transition-colors">
-              서비스 소개
+              About
             </a>
             <a href="#pricing" className="text-sm hover:text-portrei-primary transition-colors">
-              가격 정책
+              Pricing
             </a>
             <a href="#" className="text-sm hover:text-portrei-primary transition-colors">
-              이용약관
+              Terms of Service
             </a>
             <a href="#" className="text-sm hover:text-portrei-primary transition-colors">
-              개인정보처리방침
+              Privacy Policy
             </a>
           </div>
         </div>

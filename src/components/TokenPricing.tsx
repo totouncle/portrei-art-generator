@@ -5,21 +5,21 @@ import { useToast } from '@/components/ui/use-toast';
 
 const plans = [
   {
-    name: '기본 패키지',
+    name: 'Basic Package',
     tokens: 10,
     price: 5000,
     perToken: 500,
     isPopular: false
   },
   {
-    name: '인기 패키지',
+    name: 'Popular Package',
     tokens: 30,
     price: 12000,
     perToken: 400,
     isPopular: true
   },
   {
-    name: '프리미엄 패키지',
+    name: 'Premium Package',
     tokens: 100,
     price: 30000,
     perToken: 300,
@@ -32,24 +32,24 @@ const TokenPricing = () => {
   
   const handlePurchase = (plan: string) => {
     toast({
-      title: "결제 시스템 준비 중",
-      description: "Stripe 결제 연동이 필요합니다. 곧 구현될 예정입니다.",
+      title: "Payment System Coming Soon",
+      description: "Stripe integration is needed. Will be implemented soon.",
     });
   };
   
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('ko-KR').format(price);
+    return new Intl.NumberFormat('en-US').format(price);
   };
   
   return (
     <section id="pricing" className="py-12">
       <div className="container mx-auto px-4">
         <h2 className="text-2xl font-bold mb-2 text-center">
-          토큰 패키지
+          Token Packages
         </h2>
         <p className="text-muted-foreground mb-12 text-center max-w-2xl mx-auto">
-          토큰을 구매하여 다양한 스타일의 초상화를 생성하세요. 
-          각 스타일 생성당 1개의 토큰이 사용됩니다.
+          Purchase tokens to generate portraits in various styles. 
+          Each style generation uses 1 token.
         </p>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -62,7 +62,7 @@ const TokenPricing = () => {
             >
               {plan.isPopular && (
                 <div className="absolute top-0 right-0 bg-portrei-primary text-white py-1 px-3 rounded-bl-lg rounded-tr-lg text-xs font-medium">
-                  인기 상품
+                  Popular
                 </div>
               )}
               
@@ -71,11 +71,11 @@ const TokenPricing = () => {
               </h3>
               
               <div className="text-3xl font-bold mb-1">
-                ₩{formatPrice(plan.price)}
+                ${formatPrice(plan.price/1000)}
               </div>
               
               <p className="text-muted-foreground mb-6">
-                토큰당 {formatPrice(plan.perToken)}원
+                ${formatPrice(plan.perToken/1000)} per token
               </p>
               
               <div className="flex items-center mb-4">
@@ -83,9 +83,9 @@ const TokenPricing = () => {
                   <span className="text-portrei-primary font-bold">{plan.tokens}</span>
                 </div>
                 <div>
-                  <p className="font-medium">토큰 {plan.tokens}개</p>
+                  <p className="font-medium">{plan.tokens} Tokens</p>
                   <p className="text-sm text-muted-foreground">
-                    {plan.tokens}개의 초상화 생성 가능
+                    Generate {plan.tokens} portraits
                   </p>
                 </div>
               </div>
@@ -93,15 +93,15 @@ const TokenPricing = () => {
               <ul className="mb-6 flex-grow">
                 <li className="flex items-center mb-2">
                   <span className="mr-2">✓</span>
-                  <span>모든 스타일 옵션 이용 가능</span>
+                  <span>All style options available</span>
                 </li>
                 <li className="flex items-center mb-2">
                   <span className="mr-2">✓</span>
-                  <span>고해상도 다운로드</span>
+                  <span>High-resolution download</span>
                 </li>
                 <li className="flex items-center mb-2">
                   <span className="mr-2">✓</span>
-                  <span>결과물 영구 보관</span>
+                  <span>Permanent storage of results</span>
                 </li>
               </ul>
               
@@ -109,7 +109,7 @@ const TokenPricing = () => {
                 className={plan.isPopular ? "bg-portrei-primary hover:bg-portrei-secondary" : ""}
                 onClick={() => handlePurchase(plan.name)}
               >
-                {plan.isPopular ? '인기 패키지 구매하기' : '패키지 구매하기'}
+                {plan.isPopular ? 'Buy Popular Package' : 'Buy Package'}
               </Button>
             </div>
           ))}
